@@ -12,7 +12,7 @@ import static spark.Spark.*;
 public class Proxy {
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String[] SERVERS = new String[]{"http://ec2-52-86-220-111.compute-1.amazonaws.com:4567", "http://ec2-54-226-40-114.compute-1.amazonaws.com:4567"};
+    private static final String[] SERVERS = new String[]{"http://ec2-3-85-96-149.compute-1.amazonaws.com:4567", "http://ec2-23-23-42-52.compute-1.amazonaws.com:4567"};
 
     private static int currentServer = 0;
 
