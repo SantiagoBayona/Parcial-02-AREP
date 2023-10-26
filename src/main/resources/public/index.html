@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>SECUENCIA DE LUCAS - PARCIAL AREP 02</h1>
+<form >
+    <label for="value">Ingrese un número:</label><br>
+    <input type="text" id="value" name="name"><br><br>
+    <input type="button" value="Submit" onclick="loadGetMsg()">
+</form>
+<div id="getrespmsg"></div>
+
+<script>
+            function loadGetMsg() {
+                let value = document.getElementById("value").value;
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("getrespmsg").innerHTML =
+                    this.responseText;
+                }
+                xhttp.open("GET", "/proxy?value="+value);
+                xhttp.send();
+            }
+        </script>
+</body>
+</html>
