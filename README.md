@@ -25,11 +25,11 @@ mvn clean install
 1. Corremos el servidor
 
 ```
-java -cp "target/classes;target/dependency/*" org.example.HelloWorld
+java -cp "target/classes;target/dependency/*" org.example.SparkWebServer
 ```
 
 ```
-java -cp "target/classes;target/dependency/*" org.example.LoggedIn
+java -cp "target/classes;target/dependency/*" org.example.Proxy
 ```
 
 ### En la instancia ec2
@@ -45,9 +45,47 @@ Y las descomprimimos
 Ejecutamos las clases con los comandos
 
 ```
-java -cp "./bin/classes:./bin/dependency/*" org.example.LoggedIn
+java -cp "./bin/classes:./bin/dependency/*" org.example.SparkWebServer
 ```
 
 ```
-java -cp "./bin/classes:./bin/dependency/*" org.example.HelloWorld
+java -cp "./bin/classes:./bin/dependency/*" org.example.Proxy
 ```
+
+## Pruebas
+
+### En local
+
+Al ingresar a la dirección
+
+```
+https://localhost:4568/
+```
+
+Vemos que el recurso solicitado es mostrado y funcional
+
+![image](https://github.com/SantiagoBayona/Parcial-02-AREP/assets/64861204/90376064-07dd-4ace-bba1-564298b088f5)
+
+Nota: Dado que el proyecto se construyó para ser corrido remotamente este no funciona en local
+
+![image](https://github.com/SantiagoBayona/Parcial-02-AREP/assets/64861204/e6589c7a-d412-4e44-80e2-b7ebc48bc323)
+
+### En remoto
+
+Al ingresar a la dirección
+
+```
+http://ec2-3-85-96-149.compute-1.amazonaws.com:4568/
+```
+
+Vemos que el recurso carga
+
+![image](https://github.com/SantiagoBayona/Parcial-02-AREP/assets/64861204/3f9c3eb5-13a4-43e3-ac48-e7839c8ef397)
+
+## Clase que resuelve el problema 
+
+![image](https://github.com/SantiagoBayona/Parcial-02-AREP/assets/64861204/371c47f0-07e7-4caf-a3b9-36c81db543d6)
+
+
+
+
